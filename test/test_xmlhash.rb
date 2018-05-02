@@ -1,3 +1,4 @@
+
 require 'minitest/autorun'
 require 'xmlhash'
 require 'json'
@@ -25,7 +26,8 @@ eos
 
 Output = { 'history' =>
               [{ 'name' => 'review', 'when' => '2011-11-25T15:02:53', 'who' => 'coolo' },
-               { 'comment' => 'please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql',
+               { 'comment' =>
+                 'please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql',
                  'name' => 'declined', 'when' => '2011-11-25T16:17:30', 'who' => 'coolo' }],
            'review' =>
               [
@@ -36,7 +38,14 @@ Output = { 'history' =>
                   'state' => 'accepted' },
                 { 'by_group' => 'factory-auto',
                   'state' => 'new' }
-              ], 'action' => { 'type' => 'submit', 'target' => { 'project' => 'openSUSE:Factory', 'package' => 'pdns' }, 'source' => { 'rev' => '65', 'project' => 'server:dns', 'package' => 'pdns' } }, 'id' => '93651', 'description' => 'update and factory fix (forwarded request 86230 from -miska-)', 'state' => { 'comment' => {}, 'name' => 'revoked', 'when' => '2011-12-19T13:20:50', 'who' => 'coolo' } }.freeze
+              ], 'action' =>
+                 { 'type' => 'submit',
+                   'target' =>
+                   { 'project' => 'openSUSE:Factory', 'package' => 'pdns' },
+                   'source' => { 'rev' => '65', 'project' => 'server:dns', 'package' => 'pdns' } }, 'id' =>
+                    '93651', 'description' => 'update and factory fix (forwarded request 86230 from -miska-)',
+           'state' =>
+           { 'comment' => {}, 'name' => 'revoked', 'when' => '2011-12-19T13:20:50', 'who' => 'coolo' } }.freeze
 
 class TestXmlhash < Minitest::Test
   def test_xml
