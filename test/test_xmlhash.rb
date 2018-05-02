@@ -40,16 +40,16 @@ Output = { "history" =>
 
 class TestXmlhash < Minitest::Test
   def test_xml
-    1000.times {
+    1000.times do
       ret = Xmlhash.parse(Xml)
       GC.start
       assert_equal ret, Output
-    }
+    end
 
-    10000.times {
+    10000.times do
       ret = Xmlhash.parse(Xml)
       assert_equal ret, Output
-    }
+    end
   end
 
   def test_threading
