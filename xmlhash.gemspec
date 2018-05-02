@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Stephan Kulow']
   s.email       = ['coolo@suse.de']
+  s.licenses    = ['MIT']
   s.homepage    = 'http://github.com/coolo/xmlhash'
   s.summary = 'Experimental C extension to parse XML into ruby hash '
   s.description = 'A small C module that wraps libxml2s xmlreader to parse a XML
