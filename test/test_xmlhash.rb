@@ -44,7 +44,6 @@ Output = {"history" =>
 
 class TestXmlhash < Minitest::Test
   def test_xml
-
     1000.times {
       ret = Xmlhash.parse(Xml)
       GC.start
@@ -55,7 +54,6 @@ class TestXmlhash < Minitest::Test
       ret = Xmlhash.parse(Xml)
       assert_equal ret, Output
     }
-
   end
 
   def test_threading
@@ -91,7 +89,6 @@ eos
     assert_equal ret, rubyoutput
 
     assert_equal ret.elements("entry").first.value("name"), "Apache"
-
   end
 
   def test_encoding
@@ -159,6 +156,5 @@ The library includes bindings for both the C and C++ languages. It works on POSI
     xml.encode!('US-ASCII')
     xh = Xmlhash.parse(xml)
     assert_equal "UTF-8", xh['title'].encoding.to_s
-
   end
 end
