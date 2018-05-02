@@ -19,7 +19,7 @@ end
 
 extra_docs = ['README*', 'History*']
 
-task default: [:compile, :test]
+task default: %i[compile test]
 gem 'rake-compiler', '>= 0.4.1'
 require 'rake/extensiontask'
 Rake::ExtensionTask.new('xmlhash')
