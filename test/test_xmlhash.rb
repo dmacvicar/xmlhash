@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'xmlhash'
 require 'json'
 
-Xml = <<eos
+Xml = <<eos.freeze
 <request id="93651">
   <action type="submit">
     <source project="server:dns" package="pdns" rev="65"/>
@@ -36,7 +36,7 @@ Output = { "history" =>
                   "state" => "accepted" },
                 { "by_group" => "factory-auto",
                   "state" => "new" }
-              ], "action" => { "type" => "submit", "target" => { "project" => "openSUSE:Factory", "package" => "pdns" }, "source" => { "rev" => "65", "project" => "server:dns", "package" => "pdns" } }, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => { "comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo" } }
+              ], "action" => { "type" => "submit", "target" => { "project" => "openSUSE:Factory", "package" => "pdns" }, "source" => { "rev" => "65", "project" => "server:dns", "package" => "pdns" } }, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => { "comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo" } }.freeze
 
 class TestXmlhash < Minitest::Test
   def test_xml
