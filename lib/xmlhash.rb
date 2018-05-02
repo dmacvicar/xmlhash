@@ -55,7 +55,7 @@ module Xmlhash
     
     # Initialize with a hash
     def initialize(opts = nil)
-      self.replace(opts) if opts
+      replace(opts) if opts
     end
 
     def inspect
