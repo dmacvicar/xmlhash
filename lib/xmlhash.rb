@@ -1,7 +1,7 @@
+require 'xmlhash/version'
 require 'xmlhash/xmlhash'
 
 module Xmlhash
-  VERSION = '1.3.7'.freeze
 
   class XMLHash < Hash
     # Return an array of elements or []. It requires a plain string as argument
