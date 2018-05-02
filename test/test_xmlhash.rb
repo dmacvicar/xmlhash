@@ -23,20 +23,20 @@ Xml = <<eos.freeze
 </request>
 eos
 
-Output = { "history" =>
-              [{ "name" => "review", "when" => "2011-11-25T15:02:53", "who" => "coolo" },
-               { "comment" => "please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql",
-                 "name" => "declined", "when" => "2011-11-25T16:17:30", "who" => "coolo" }],
-           "review" =>
+Output = { 'history' =>
+              [{ 'name' => 'review', 'when' => '2011-11-25T15:02:53', 'who' => 'coolo' },
+               { 'comment' => 'please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql',
+                 'name' => 'declined', 'when' => '2011-11-25T16:17:30', 'who' => 'coolo' }],
+           'review' =>
               [
-                { "comment" => "Big comment",
-                  "by_group" => "legal-auto",
-                  "when" => "2011-11-25T15:09:55",
-                  "who" => "licensedigger",
-                  "state" => "accepted" },
-                { "by_group" => "factory-auto",
-                  "state" => "new" }
-              ], "action" => { "type" => "submit", "target" => { "project" => "openSUSE:Factory", "package" => "pdns" }, "source" => { "rev" => "65", "project" => "server:dns", "package" => "pdns" } }, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => { "comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo" } }.freeze
+                { 'comment' => 'Big comment',
+                  'by_group' => 'legal-auto',
+                  'when' => '2011-11-25T15:09:55',
+                  'who' => 'licensedigger',
+                  'state' => 'accepted' },
+                { 'by_group' => 'factory-auto',
+                  'state' => 'new' }
+              ], 'action' => { 'type' => 'submit', 'target' => { 'project' => 'openSUSE:Factory', 'package' => 'pdns' }, 'source' => { 'rev' => '65', 'project' => 'server:dns', 'package' => 'pdns' } }, 'id' => '93651', 'description' => 'update and factory fix (forwarded request 86230 from -miska-)', 'state' => { 'comment' => {}, 'name' => 'revoked', 'when' => '2011-12-19T13:20:50', 'who' => 'coolo' } }.freeze
 
 class TestXmlhash < Minitest::Test
   def test_xml
@@ -74,30 +74,30 @@ class TestXmlhash < Minitest::Test
 </directory>
 eos
 
-    rubyoutput = { "count" => "4",
-                   "entry" =>
-                      [{ "name" => "Apache" },
-                       { "name" => "Apache:APR_Pool_Debug" },
-                       { "name" => "Apache:MirrorBrain" },
-                       { "name" => "Apache:Modules" }] }
+    rubyoutput = { 'count' => '4',
+                   'entry' =>
+                      [{ 'name' => 'Apache' },
+                       { 'name' => 'Apache:APR_Pool_Debug' },
+                       { 'name' => 'Apache:MirrorBrain' },
+                       { 'name' => 'Apache:Modules' }] }
 
     ret = Xmlhash.parse(xml)
     assert_equal ret, rubyoutput
 
-    assert_equal ret.elements("entry").first.value("name"), "Apache"
+    assert_equal ret.elements('entry').first.value('name'), 'Apache'
   end
 
   def test_encoding
     xml = "<?xml version='1.0' encoding='UTF-8'?><name>Adrian Schröter</name>"
 
     ret = Xmlhash.parse(xml)
-    assert_equal ret, "Adrian Schröter"
+    assert_equal ret, 'Adrian Schröter'
 
     xml = "<?xml version='1.0' encoding='UTF-8'?><name value='Adrian Schröter'/>"
     ret = Xmlhash.parse(xml)
-    assert_equal ret, "value" => "Adrian Schröter"
+    assert_equal ret, 'value' => 'Adrian Schröter'
 
-    assert_equal ret.get("value"), "Adrian Schröter"
+    assert_equal ret.get('value'), 'Adrian Schröter'
   end
 
   def test_cdata
@@ -109,18 +109,18 @@ eos
 eos
 
     ret = Xmlhash.parse(xml)
-    assert_equal ret['diff'], "lines" => "1", "_content" => "DummyContent"
+    assert_equal ret['diff'], 'lines' => '1', '_content' => 'DummyContent'
   end
 
   def test_empty
-    xml = "<request><files/></request>"
+    xml = '<request><files/></request>'
     ret = Xmlhash.parse(xml)
     assert_equal ret.elements('files'), []
   end
 
   def test_garbage
     # unfortunately it's rather challening testing nothing is printed to stderr
-    ret = Xmlhash.parse("asdasdaskdladka")
+    ret = Xmlhash.parse('asdasdaskdladka')
     assert_nil ret
   end
 
@@ -134,23 +134,23 @@ Libconfig is very compact &#8212; just 38K for the stripped C shared library (le
 The library includes bindings for both the C and C++ languages. It works on POSIX-compliant UNIX systems (GNU/Linux, Mac OS X, Solaris, FreeBSD) and Windows (2000, XP and later).</description>
   </package>'
     xh = Xmlhash.parse(xml)
-    assert_equal "UTF-8", xh['title'].encoding.to_s
+    assert_equal 'UTF-8', xh['title'].encoding.to_s
 
     # now try with different input encoding
     xml.encode!('US-ASCII')
     xh = Xmlhash.parse(xml)
-    assert_equal "UTF-8", xh['title'].encoding.to_s
+    assert_equal 'UTF-8', xh['title'].encoding.to_s
 
     xml = '<?xml version="1.0" encoding="ISO-8859-1"?>
     <package><title>Äöß</title></package>'
     xml.encode!('ISO-8859-1')
     xh = Xmlhash.parse(xml)
-    assert_equal "ISO-8859-1", xh['title'].encoding.to_s
+    assert_equal 'ISO-8859-1', xh['title'].encoding.to_s
 
     xml = '<?xml version="1.0" encoding="ISO-8859-1"?>
     <package><title>&#228;&#211;&#254;</title></package>'
     xml.encode!('US-ASCII')
     xh = Xmlhash.parse(xml)
-    assert_equal "UTF-8", xh['title'].encoding.to_s
+    assert_equal 'UTF-8', xh['title'].encoding.to_s
   end
 end
