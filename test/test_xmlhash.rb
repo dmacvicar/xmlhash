@@ -95,7 +95,7 @@ eos
 
     xml = "<?xml version='1.0' encoding='UTF-8'?><name value='Adrian Schröter'/>"
     ret = Xmlhash.parse(xml)
-    assert_equal ret, { "value" => "Adrian Schröter" }
+    assert_equal ret, "value" => "Adrian Schröter"
 
     assert_equal ret.get("value"), "Adrian Schröter"
   end
@@ -109,7 +109,7 @@ eos
 eos
 
     ret = Xmlhash.parse(xml)
-    assert_equal ret['diff'], { "lines" => "1", "_content" => "DummyContent" }
+    assert_equal ret['diff'], "lines" => "1", "_content" => "DummyContent"
   end
 
   def test_empty
