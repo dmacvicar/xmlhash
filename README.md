@@ -1,39 +1,46 @@
-= xmlhash
+# xmlhash
 
 * https://github.com/coolo/xmlhash
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 A small C module that wraps libxml2's xmlreader to parse a XML
 string into a ruby hash
 
-== FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS:
 
 * only one function: parse(xml) -> hash
 
-== SYNOPSIS:
+## SYNOPSIS:
 
- ret = parse("<hello who='world'/>")
- assert_equal ret, { 'who' => 'world' }
+```ruby
+ret = parse("<hello who='world'/>")
+assert_equal ret, { 'who' => 'world' }
+```
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
 * libxml2 >= 2.6
 
-== INSTALL:
+## INSTALL:
 
-* sudo gem install
+```console
+bundle exec rake install
+```
 
-== DEVELOPERS:
+## DEVELOPERS:
 
 After checking out the source, run:
 
-  $ rake newb
+```console
+$ bundle install --path vendor
+$ bundle exec rake
+```
 
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
