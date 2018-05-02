@@ -8,13 +8,6 @@
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Layout/EmptyLineAfterMagicComment:
-  Exclude:
-    - 'test/test_xmlhash.rb'
-    - 'xmlhash.gemspec'
-
-# Offense count: 2
-# Cop supports --auto-correct.
 Layout/EmptyLines:
   Exclude:
     - 'test/test_xmlhash.rb'

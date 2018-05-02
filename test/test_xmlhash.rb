@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'minitest/autorun'
 require 'xmlhash'
 require 'json'
