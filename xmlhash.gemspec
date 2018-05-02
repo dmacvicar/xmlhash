@@ -22,7 +22,7 @@ string into a ruby hash'
   s.add_development_dependency('rake-compiler', ['~> 1.0.0'])
   s.add_development_dependency('rubocop', [' ~> 0.55.0'])
 
-  s.extensions	<< 'ext/xmlhash/extconf.rb'
+  s.extensions << 'ext/xmlhash/extconf.rb'
 
   s.files        = Dir.glob('lib/**/*.rb') + Dir.glob('ext/**/*.{rb,h,c}') + %w(README.md)
   s.require_path = 'lib'
