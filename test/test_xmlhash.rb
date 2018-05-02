@@ -23,22 +23,22 @@ Xml = <<eos
 </request>
 eos
 
-Output = {"history" =>
-              [{"name" => "review", "when" => "2011-11-25T15:02:53", "who" => "coolo"},
-               {"comment" => "please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql",
-                "name" => "declined", "when" => "2011-11-25T16:17:30", "who" => "coolo"}
+Output = { "history" =>
+              [{ "name" => "review", "when" => "2011-11-25T15:02:53", "who" => "coolo" },
+               { "comment" => "please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql",
+                 "name" => "declined", "when" => "2011-11-25T16:17:30", "who" => "coolo" }
               ],
-          "review" =>
+           "review" =>
               [
-                {"comment" => "Big comment",
-                 "by_group" => "legal-auto",
-                 "when" => "2011-11-25T15:09:55",
-                 "who" => "licensedigger",
-                 "state" => "accepted"
+                { "comment" => "Big comment",
+                  "by_group" => "legal-auto",
+                  "when" => "2011-11-25T15:09:55",
+                  "who" => "licensedigger",
+                  "state" => "accepted"
                 },
-                {"by_group" => "factory-auto",
-                 "state" => "new"}
-              ], "action" => {"type" => "submit", "target" => {"project" => "openSUSE:Factory", "package" => "pdns"}, "source" => {"rev" => "65", "project" => "server:dns", "package" => "pdns"}}, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => {"comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo"}}
+                { "by_group" => "factory-auto",
+                  "state" => "new" }
+              ], "action" => { "type" => "submit", "target" => { "project" => "openSUSE:Factory", "package" => "pdns" }, "source" => { "rev" => "65", "project" => "server:dns", "package" => "pdns" } }, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => { "comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo" } }
 
 class TestXmlhash < Minitest::Test
   def test_xml
@@ -76,12 +76,12 @@ class TestXmlhash < Minitest::Test
 </directory>
 eos
 
-    rubyoutput = {"count" => "4",
-                  "entry" =>
-                      [{"name" => "Apache"},
-                       {"name" => "Apache:APR_Pool_Debug"},
-                       {"name" => "Apache:MirrorBrain"},
-                       {"name" => "Apache:Modules"}]}
+    rubyoutput = { "count" => "4",
+                   "entry" =>
+                      [{ "name" => "Apache" },
+                       { "name" => "Apache:APR_Pool_Debug" },
+                       { "name" => "Apache:MirrorBrain" },
+                       { "name" => "Apache:Modules" }] }
 
     ret = Xmlhash.parse(xml)
     assert_equal ret, rubyoutput
@@ -97,7 +97,7 @@ eos
 
     xml = "<?xml version='1.0' encoding='UTF-8'?><name value='Adrian Schröter'/>"
     ret = Xmlhash.parse(xml)
-    assert_equal ret, {"value" => "Adrian Schröter"}
+    assert_equal ret, { "value" => "Adrian Schröter" }
 
     assert_equal ret.get("value"), "Adrian Schröter"
   end
@@ -111,7 +111,7 @@ eos
 eos
 
     ret = Xmlhash.parse(xml)
-    assert_equal ret['diff'], {"lines" => "1", "_content" => "DummyContent"}
+    assert_equal ret['diff'], { "lines" => "1", "_content" => "DummyContent" }
   end
 
   def test_empty
