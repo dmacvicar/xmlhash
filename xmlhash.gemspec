@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.description = 'A small C module that wraps libxml2s xmlreader to parse a XML
 string into a ruby hash'
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.1'
   s.required_rubygems_version = '>= 1.3.6'
   s.add_development_dependency('json', ['~> 2.1.0'])
   s.add_development_dependency('minitest', [' ~> 5.11.0'])
