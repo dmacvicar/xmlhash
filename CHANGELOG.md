@@ -1,67 +1,67 @@
-=== 1.3.7 / 2016-07-04
+### 1.3.7 / 2016-07-04
 
 * Fix XML parsing: ignore comments and parse huge TXT nodes
 
-=== 1.3.6 / 2013-09-11
+### 1.3.6 / 2013-09-11
 
 * Wrap libxml2 parsing in a synchronize block - otherwise the stacking
   will not work and it's too much work to make it reentrant
 
-=== 1.3.5 / 2012-12-21 ("final edition")
+### 1.3.5 / 2012-12-21 ("final edition")
 
 * Initialize result so we don't return something random in case of parse error
 
-=== 1.3.4 / 2012-12-04
+### 1.3.4 / 2012-12-04
 
 * "upgrade" latin1 and us-ascii to utf-8 automatically
 
-=== 1.3.3 / 2012-11-06
+### 1.3.3 / 2012-11-06
 * <files/> should return [] not [{}]
 
-=== 1.3.2 / 2012-11-06
+### 1.3.2 / 2012-11-06
 
 * elements that have both attributes and content, are now parsed
   as { "attr" => "value", "_content" => "CONTENT" }
 
-=== 1.3.1 / 2012-10-08
+### 1.3.1 / 2012-10-08
 
 * fix manifest
 * add constructor to Xmlhash
 
-=== 1.3.0 / 2012-10-01
+### 1.3.0 / 2012-10-01
 
 * parse will no longer return a plain ruby Hash, but a XMLHash,
   which is a subclass with some convenience functions added to it
 
-=== 1.2.4 / 2012-09-27
+### 1.2.4 / 2012-09-27
 
 * set the encoding of the result to the encoding of the input
 
-=== 1.2.3 / 2012-06-22
+### 1.2.3 / 2012-06-22
 
 * (pulled)
 
-=== 1.2.2 / 2012-06-20
+### 1.2.2 / 2012-06-20
 
 * use pkg-config for libxml
 
-=== 1.2.1 / 2012-03-24
+### 1.2.1 / 2012-03-24
 
 * mark even more variables for ruby
 
-=== 1.2 / 2012-03-21
+### 1.2 / 2012-03-21
 
 * be careful with ruby variables to avoid GC stress killing us
 
-=== 1.1 / 2012-03-19
+### 1.1 / 2012-03-19
 
 * make it C code to avoid problems on sle11
 
-=== 1.0.1 / 2012-03-09
+### 1.0.1 / 2012-03-09
 
 * Compile with ruby 1.9
 
-=== 1.0.0 / 2012-02-28
+### 1.0.0 / 2012-02-28
 
 * 1 major enhancement
 
