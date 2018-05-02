@@ -17,12 +17,9 @@ module Xmlhash
       sub = self[name]
       return [] if !sub || sub.empty?
       unless sub.is_a? Array
-        if block_given?
-          yield sub
-          return
-        else
-          return [sub]
-        end
+        return [sub] unless block_given?
+        yield sub
+        return
       end
       return sub unless block_given?
       sub.each do |n|
