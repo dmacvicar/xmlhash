@@ -17,10 +17,10 @@ string into a ruby hash'
 
   s.required_ruby_version = '>= 1.9.3'
   s.required_rubygems_version = '>= 1.3.6'
-  s.add_development_dependency('rake-compiler', ['~> 1.0.0'])
-  s.add_development_dependency('pkg-config', ['~> 1.3.0'])
   s.add_development_dependency('json', ['~> 2.1.0'])
   s.add_development_dependency('minitest', [' ~> 5.11.0'])
+  s.add_development_dependency('pkg-config', ['~> 1.3.0'])
+  s.add_development_dependency('rake-compiler', ['~> 1.0.0'])
   s.add_development_dependency('rubocop', [' ~> 0.55.0'])
 
   s.extensions	<< 'ext/xmlhash/extconf.rb'
