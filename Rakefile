@@ -1,5 +1,5 @@
 # -*- ruby -*-
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift File.expand_path('lib', __dir__)
 require 'bundler/gem_tasks'
 require 'rake'
 require 'rake/testtask'
@@ -11,8 +11,8 @@ task :build do
 end
 
 Rake::TestTask.new do |t|
-  t.libs << File.expand_path('../test', __FILE__)
-  t.libs << File.expand_path('../', __FILE__)
+  t.libs << File.expand_path('test', __dir__)
+  t.libs << File.expand_path(__dir__)
   t.test_files = FileList['test/test*.rb']
   t.verbose = true
 end
