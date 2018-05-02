@@ -13,12 +13,12 @@ module Xmlhash
     #
     # You can also pass a block to iterate over all childrens.
     def elements(name)
-      unless name.kind_of? String
+      unless name.is_a? String
         raise ArgumentError, "expected string"
       end
       sub = self[name]
       return [] if !sub || sub.empty?
-      unless sub.kind_of? Array
+      unless sub.is_a? Array
         if block_given?
           yield sub
           return
