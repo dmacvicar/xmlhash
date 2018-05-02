@@ -26,8 +26,7 @@ eos
 Output = { "history" =>
               [{ "name" => "review", "when" => "2011-11-25T15:02:53", "who" => "coolo" },
                { "comment" => "please make sure to wait before these depencencies are in openSUSE:Factory: libopendbx-devel, libopendbx1, libopendbxplus1, opendbx-backend-pgsql",
-                 "name" => "declined", "when" => "2011-11-25T16:17:30", "who" => "coolo" }
-              ],
+                 "name" => "declined", "when" => "2011-11-25T16:17:30", "who" => "coolo" }],
            "review" =>
               [
                 { "comment" => "Big comment",
