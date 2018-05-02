@@ -24,7 +24,7 @@ string into a ruby hash'
 
   s.extensions << 'ext/xmlhash/extconf.rb'
 
-  s.files        = Dir.glob('lib/**/*.rb') + Dir.glob('ext/**/*.{rb,h,c}') + %w(README.md)
+  s.files        = Dir.glob('lib/**/*.rb') + Dir.glob('ext/**/*.{rb,h,c}') + %w[README.md]
   s.require_path = 'lib'
 
   s.post_install_message = <<-POST_INSTALL_MESSAGE
