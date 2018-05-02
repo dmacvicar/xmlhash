@@ -38,7 +38,7 @@ module Xmlhash
     def get(name)
       sub = self[name]
       return sub if sub
-      return XMLHash.new
+      XMLHash.new
     end
 
     # Return the value of the name or nil if nothing is there
@@ -47,7 +47,7 @@ module Xmlhash
       sub = self[name.to_s]
       return nil unless sub
       return '' if sub.empty? # avoid {}
-      return sub
+      sub
     end
 
     # Initialize with a hash
