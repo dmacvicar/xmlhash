@@ -8,16 +8,18 @@ task :build do
   system 'gem build xmlhash.gemspec'
 end
 
-Rake::TestTask.new do |t|
-  t.libs << File.expand_path('test', __dir__)
-  t.libs << File.expand_path(__dir__)
+Rake::TestTask.new(:test => :compile) do |t|
+  t.libs << File.expand_path('../test', __FILE__)
+  t.libs << File.expand_path('../', __FILE__)
   t.test_files = FileList['test/test*.rb']
   t.verbose = true
 end
 
-task default: %i[compile test]
+task :default => [:compile, :test]
 gem 'rake-compiler', '>= 0.4.1'
 require 'rake/extensiontask'
-Rake::ExtensionTask.new('xmlhash')
+Rake::ExtensionTask.new('xmlhash') do |ext|
+  ext.lib_dir = 'lib/xmlhash'
+end
 
 # vim: syntax=ruby

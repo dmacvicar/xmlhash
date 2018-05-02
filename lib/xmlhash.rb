@@ -1,4 +1,5 @@
 require 'xmlhash/version'
+# native library
 require 'xmlhash/xmlhash'
 
 module Xmlhash
