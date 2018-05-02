@@ -17,8 +17,6 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-extra_docs = ['README*', 'History*']
-
 task default: %i[compile test]
 gem 'rake-compiler', '>= 0.4.1'
 require 'rake/extensiontask'
