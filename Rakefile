@@ -1,21 +1,27 @@
 # -*- ruby -*-
+$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+require 'bundler/gem_tasks'
+require 'rake'
+require 'rake/testtask'
 
-require 'rubygems'
-require 'hoe'
-require 'rake/extensiontask'
+require 'xmlhash'
 
-Hoe.spec 'xmlhash' do
-  developer('Stephan Kulow', 'coolo@suse.com')
-  self.readme_file = 'README.txt'
-  self.license('MIT')
-  self.spec_extras = { :extensions => ["ext/xmlhash/extconf.rb"] }
-  self.extra_dev_deps << ['rake-compiler', '>= 0']
-  self.extra_deps << ['pkg-config']
-  Rake::ExtensionTask.new('xmlhash', spec) do |ext|
-    ext.lib_dir = File.join('lib', 'xmlhash')
-  end
+task :build do
+  system 'gem build xmlhash.gemspec'
 end
 
-Rake::Task[:test].prerequisites << :compile
+Rake::TestTask.new do |t|
+  t.libs << File.expand_path('../test', __FILE__)
+  t.libs << File.expand_path('../', __FILE__)
+  t.test_files = FileList['test/test*.rb']
+  t.verbose = true
+end
+
+extra_docs = ['README*', 'History*']
+
+task :default => [:compile, :test]
+gem 'rake-compiler', '>= 0.4.1'
+require 'rake/extensiontask'
+Rake::ExtensionTask.new('xmlhash')
 
 # vim: syntax=ruby

@@ -1,7 +1,6 @@
-# encoding: UTF-8
-
-require "test/unit"
-require "xmlhash"
+# encoding: utf-8
+require 'minitest/autorun'
+require 'xmlhash'
 require 'json'
 
 Xml = <<eos
@@ -43,7 +42,7 @@ Output = {"history" =>
               ], "action" => {"type" => "submit", "target" => {"project" => "openSUSE:Factory", "package" => "pdns"}, "source" => {"rev" => "65", "project" => "server:dns", "package" => "pdns"}}, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => {"comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo"}}
 
 
-class TestXmlhash < Test::Unit::TestCase
+class TestXmlhash < Minitest::Test
   def test_xml
 
 
@@ -130,7 +129,7 @@ eos
   def test_garbage
     # unfortunately it's rather challening testing nothing is printed to stderr
     ret = Xmlhash.parse("asdasdaskdladka")
-    assert_equal nil, ret
+    assert_nil ret
   end
 
   def test_utf8
