@@ -46,7 +46,7 @@ class TestXmlhash < Minitest::Test
       assert_equal ret, Output
     end
 
-    10000.times do
+    10_000.times do
       ret = Xmlhash.parse(Xml)
       assert_equal ret, Output
     end
