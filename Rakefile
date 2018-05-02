@@ -4,8 +4,6 @@ require 'bundler/gem_tasks'
 require 'rake'
 require 'rake/testtask'
 
-require 'xmlhash'
-
 task :build do
   system 'gem build xmlhash.gemspec'
 end
