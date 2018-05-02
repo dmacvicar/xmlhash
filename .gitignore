@@ -1,3 +1,7 @@
 tmp
 pkg
 *.so
+.bundle
+vendor/
+*.gem
+Gemfile.lock
