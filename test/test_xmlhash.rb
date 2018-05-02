@@ -34,8 +34,7 @@ Output = { "history" =>
                   "by_group" => "legal-auto",
                   "when" => "2011-11-25T15:09:55",
                   "who" => "licensedigger",
-                  "state" => "accepted"
-                },
+                  "state" => "accepted" },
                 { "by_group" => "factory-auto",
                   "state" => "new" }
               ], "action" => { "type" => "submit", "target" => { "project" => "openSUSE:Factory", "package" => "pdns" }, "source" => { "rev" => "65", "project" => "server:dns", "package" => "pdns" } }, "id" => "93651", "description" => "update and factory fix (forwarded request 86230 from -miska-)", "state" => { "comment" => {}, "name" => "revoked", "when" => "2011-12-19T13:20:50", "who" => "coolo" } }
