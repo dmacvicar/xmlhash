@@ -1,5 +1,7 @@
 # xmlhash
 
+[![Build Status](https://travis-ci.org/coolo/xmlhash.svg?branch=master)](https://travis-ci.org/coolo/xmlhash)
+
 * https://github.com/coolo/xmlhash
 
 ## DESCRIPTION:
