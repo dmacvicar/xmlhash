@@ -67,5 +67,4 @@ module Xmlhash
     @@mutex ||= Mutex.new
     @@mutex.synchronize { parse_int(str) }
   end
-
 end
