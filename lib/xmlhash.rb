@@ -61,7 +61,6 @@ module Xmlhash
     def inspect
       "X(#{super})"
     end
-
   end
 
   def self.parse(str)
