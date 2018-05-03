@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
 string into a ruby hash'
 
   s.required_ruby_version = '>= 2.1'
-  s.required_rubygems_version = '>= 1.3.6'
   s.add_development_dependency('json', ['~> 2.1'])
   s.add_development_dependency('minitest', [' ~> 5.11'])
   s.add_development_dependency('pkg-config', ['~> 1.3'])
